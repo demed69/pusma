@@ -15,9 +15,11 @@ class NewsController extends Controller
      */
     public function index()
     {
+        $news = News::all();
         return Inertia::render('Homepage', [
             'title' => "cuy univers home",
             'description' => "selamat datang di cuy univers news portal",
+            'news' => $news,
         ]);
     }
 

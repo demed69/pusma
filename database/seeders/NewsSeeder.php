@@ -18,12 +18,13 @@ class NewsSeeder extends Seeder
     public function run()
     {
 
-
-        DB::table('news')->insert([
-            'title' => fake()->title(),
-            'description' => fake()->paragraph(2, true),
-            'category' => fake()->sentence(),
-            'author' => fake()->email(),
-        ]);
+        for ($i = 0; $i < 20; $i++) {
+            DB::table('news')->insert([
+                'title' => fake()->title(),
+                'description' => fake()->paragraph(2, true),
+                'category' => fake()->sentence(),
+                'author' => fake()->email(),
+            ]);
+        }
     }
 }
